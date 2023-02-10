@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>7227 : Bleeder: Overcurrent</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>7227: Bleeder: Overcurrent</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> Limit
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">REAL</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Runtime error if the measured chopper current UDC_CHOP_CURR exceeds the limit 1.2 * UDC_ACT / R_BLEEDER_EXT.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>None.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>Braking resistor error configuration: The parameter for the resistance value of the braking resistor R_BLEEDER_EXT was set too high.
+<br>Braking resistor defective or connections RB+ and RB-: Short-circuit
+<br>Braking resistor defective or connection RB-: Ground fault RB-
+<br>Braking resistor defective: The real resistance value of the braking resistor has decreased.
+<br>DC bus voltage measurement defective: The real DC bus voltage value is higher than the measured DC bus voltage value UDC_ACT.
+<br>Chopper current measurement defective: The measured chopper current value UDC_CHOP_CURR is too high.
+<br>
+<br>The overcurrent check can be disabled by setting Bit8 (0x100) in the parameter MOTOR_TEST_MODE.
+<br>Caution: Ignoring the braking resistor overcurrent can result in damage to the ACOPOS module or the braking resistor.
+<br><br>
+  </p>
+ </body>
+</html>

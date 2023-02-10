@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>5004 : Negative SW limit reached</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>5004: Negative SW limit reached</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Runtime error when movement is active if the braking range of the negative SW limit has been reached and the set speed is 0.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>The movement is deactivated. The controller remains switched on.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>See error number <a href="5003.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/5003.htm">5003</a>.
+<br>Negative SW limit incorrectly configured.
+<br>Cam automat: The set value generation is too dynamic (speed or acceleration is too high) for the axis limit AXLIM_A2_NEG and therefore exceeds the range of the 'braking parabola' on the negative SW limit.
+<br>See also error number <a href="5001.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/5001.htm">5001</a>.
+<br><br>
+  </p>
+ </body>
+</html>

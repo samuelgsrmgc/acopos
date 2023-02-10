@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>6001 : Sync controller: Timeout for sync telegram occurred</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>6001: Sync controller: Timeout for sync telegram occurred</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Runtime error during drive synchronization. No synchronization telegram was received within the 5x period duration of the synchronization telegram SYNC_MSG_PERIOD.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>The 'drive synchronous' state is reset.
+<br>Position jumps can occur during network coupling.
+<br>Set value jumps can occur during the operating mode 'external, cyclic set values'.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>Synchronization master was switched off or failed (application, power failure, voltage drop, AC110 plug-in card defective)
+<br>Network connection to the synchronization master is defective or has been interrupted. See wiring guidelines error number <a href="7030.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/7030.htm">7030</a>.
+<br>Check terminating resistors.
+<br>Defective bus station in the entire system.
+<br>The network load is too high. As a result, the synchronization telegram is sent with a delay due to its low priority.
+<br>This error can only occur in a CAN network.
+<br><br>
+  </p>
+ </body>
+</html>

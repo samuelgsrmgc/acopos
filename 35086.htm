@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>35086 : SMC Fail Safe: Safe output - Test state has changed</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>35086: SMC Fail Safe: Safe output - Test state has changed</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> Output state
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">UDINT</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Error in the safe outputs.
+<br>
+<br>The output state of STO1, STO2, and SBC is displayed in the additional information (info0, info1, info2).
+<br>State is between 0x00 and 0x0F: Module defect.
+<br>State is between 0x21 and 0x23: Internal error detected.
+<br>
+<br>Offset information for safety logger:
+<br>binary data[17]: Info0 = State of STO1 channel
+<br>binary data[18]: Info1 = State of STO2 channel
+<br>binary data[19]: Info2 = State of SBC channel
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>The module changes into Fail Safe state.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>channel specific state:
+<br>0x00 to 0x0F: Module defect. Replace the module!
+<br>0x21 to 0x23: nternal error detected. Call technical support!
+<br><br>
+  </p>
+ </body>
+</html>

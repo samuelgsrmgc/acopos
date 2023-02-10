@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>7210 : DC bus: Charging: Voltage unstable </title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>7210: DC bus: Charging: Voltage unstable </h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Runtime error using the 'switch on controller' command. 
+<br>The main relay is open.
+<br>A valid nominal DC bus voltage UDC_NOMINAL could not be detected.
+<br>The rate of change of the filtered DC bus voltage UDC_FILTER is greater than 62.5 VDC / s.
+<br>The rate of change of the filtered DC bus voltage UDC_FILTER is less than -6.25 VDC / s.
+<br>The filtered DC bus voltage UDC_FILTER sporadically sinks below the minimum cut-off voltage 0.9*MAX(UDC_NOMINAL, UDC_DETECTION).
+<br>The filtered DC bus voltage UDC_FILTER sporadically exceeds the limit voltage:
+<br>8Vxxxx.00-x.......746 VDC (1.1*sqrt(2)*480VAC)
+<br>8Vxxxx.50-x.......357 VDC (1.1*sqrt(2)*230VAC) 
+<br>8BxP.................746 VDC (1.1*sqrt(2)*480VAC) 
+<br>8BVI.................880 VDC
+<br>8CVI.................880 VDC
+<br>8DI. .................880 VDC
+<br>80V..................88 VDC
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>See error number <a href="4005.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/4005.htm">4005</a>.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>See <a href="javascript:if(confirm('http://www.xn--brtschi-5wa.ch/acp10_drivefunctions/power_transmission.html  \n\n¸ÃÎÄ¼þÎ´±» Teleport Pro ÏÂÔØ£¬ÒòÎª ËüÎ»ÓÚÆðÊ¼µØÖ·ÒÔÉèÖÃµÄ±ß½çÒÔÍâµÄÓò»òÂ·¾¶ÖÐ¡£  \n\nÄãÏëÒª´Ó·þÎñÆ÷´ò¿ªËüÂð?'))window.location='http://www.xn--brtschi-5wa.ch/acp10_drivefunctions/power_transmission.html'" tppabs="http://www.xn--brtschi-5wa.ch/acp10_drivefunctions/power_transmission.html">Power transmission</a>
+<br>
+<br>-> Request the status 'controller ready' before the command 'switch on controller'.
+<br>Mains disturbance: Large DC bus voltage fluctuation. -> Check the filtered DC bus voltage UDC_FILTER.
+<br><br>
+  </p>
+ </body>
+</html>

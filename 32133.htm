@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>32133 : The NC module type of the specified NC data module is invalid</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>32133: The NC module type of the specified NC data module is invalid</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> Requested type (in HB) and type of NC data module (in LB)
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">UINT</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>This error is displayed, if an NC data module with a certain NC module type should be accessed, but the specified NC data module has another NC module type.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>Processing of the specified NC data module is aborted.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>Specify an NC data module with the correct NC module type.
+<br>NC module types:
+<br>- 11 NC manager configuration
+<br>- 12 NC INIT parameters
+<br>- 13 NC error text table
+<br>- 16 ACOPOS parameter table
+<br>- 20 CNC program
+<br>- 21 CNC zero point table
+<br>- 22 CNC tool data table
+<br>- 23 CNC R-parameter table
+<br>- 24 CNC cam profile (table)
+<br>- 25 CNC cam profile (polynomial)
+<br>- 27 ACOPOS cam profile (polynomial)
+<br>- 28 NC mapping table
+<br>- 30 ACOPOS network trace
+<br>- 31 ACOPOS parameter trace
+<br>- 32 MTC data (Motion Trace Configuration)
+<br><br>
+  </p>
+ </body>
+</html>

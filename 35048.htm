@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>35048 : SMC Fail Safe: Violation of parameter limits</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>35048: SMC Fail Safe: Violation of parameter limits</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> Additional info
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">UDINT</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>The parameter limits of at least one parameter in the SafeDESIGNER has been violated.
+<br>
+<br>The additional information (Info1) shows the first parameter where a violation occurred:
+<br>0x00000001 ... Count of physical reference system
+<br>0x00000002 ... Units per count of physical reference system
+<br>0x00000003 ... Counting direction
+<br>0x00000004 ... Maximum Speed to normalize the speed range 
+<br>0x00000005 ... Deceleration Ramp (Units/s^2)
+<br>0x00000006 ... Maximum Speedlimit for SMS (Units/s)
+<br>0x00000007 ... Safe Speedlimit 1 for SLS (Units/s)
+<br>0x00000008 ... Safe Speedlimit 2 for SLS (Units/s)
+<br>0x00000009 ... Safe Speedlimit 3 for SLS (Units/s)
+<br>0x0000000A ... Safe Speedlimit 4 for SLS (Units/s)
+<br>0x0000000B ... Standstill Speed Tolerance (Units/s)
+<br>0x0000000C ... Standstill Position Tolerance (Units)
+<br>0x0000000D ... Safe Increments (Units)
+<br>0x0000000E ... Ramp Monitoring Time for SS1 (us)
+<br>0x0000000F ... Ramp Monitoring Time for SS2 (us)
+<br>0x00000010 ... Ramp Monitoring Time for SLS1 (us)
+<br>0x00000011 ... Ramp Monitoring Time for SLS2 (us)
+<br>0x00000012 ... Ramp Monitoring Time for SLS3 (us)
+<br>0x00000013 ... Ramp Monitoring Time for SLS4 (us)
+<br>0x00000014 ... Delay time to active STO in functional fail safe (us)
+<br>0x00000015 ... Delay time to start ramp monitoring (us)
+<br>0x00000016 ... Delay time to start SDI (us)
+<br>0x00000017 ... Delay time to start SLI (us)
+<br>0x00000018 ... Delay time to start SBC (us)
+<br>0x00000019 ... Early Limit Monitoring time (us)
+<br>0x0000001A ... Encoder monitoring mode
+<br>0x0000001C ... Encoder monitoring Speed tolerance (Units/s)
+<br>0x0000001D ... Encoder monitoring Position tolerance (Units)
+<br>0x0000001E ... Delay time until the brake engages
+<br>0x0000001F ... Length of physical reference system for linear encoder (nm)
+<br>0x00000020 ... Max. trigger speed (Units/s)
+<br>0x00000021 ... Homing monitoring time (us)
+<br>0x00000022 ... Homing mode
+<br>0x00000023 ... Distance for blocking the activation of "triggering reference pulse"
+<br>0x00000024 ... Delay time for start SLP (us)
+<br>0x00000025 ... Maximum Acceleration (rad/s^2 or mm/s^2)
+<br>0x00000026 ... Homing settings
+<br>
+<br>Offset information for safety logger:
+<br>binary data[20..17]: Info1
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>The module changes into Fail Safe state.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>Check the Safety application!
+<br>Check if you are using the correct hwc-file!
+<br><br>
+  </p>
+ </body>
+</html>

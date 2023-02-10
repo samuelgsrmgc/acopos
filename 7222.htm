@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>7222 : Power stage: Summation current connection X5: Overcurrent (Ground fault)</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>7222: Power stage: Summation current connection X5: Overcurrent (Ground fault)</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> Limit
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">REAL</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Runtime error if the absolute value of the summation current (= |VCTRL_I0| = |VCTRL_I1 + VCTRL_I2 + VCTRL_I3|) exceeds the module-dependent limit (see info):
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>See error number <a href="7224.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/7224.htm">7224</a>.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>8BVPxxxxxxxx.xxx-x: Ground is connected to the X5 connection on contact L1, L2 or L3
+<br>-> Check voltage using multimeter.
+<br>
+<br>8BVPxxxxxxxx.xxx-x: An inverter module with ground fault on the motor side is connected via the DC bus.
+<br>-> Check whether the 8BVIxxxxxxxx.xxx-x:X5 connection is connected to the ground.
+<br>
+<br>8BVPxxxxxxxx.xxx-x: Main filter wiring error: Connection X1 and X2 switched
+<br>-> Check whether the 8BVFxxxxxxxx.xxx-x:X1 connection is connected to the power mains.
+<br>-> Check whether the 8BVFxxxxxxxx.xxx-x:X2 connection is connected to the 8BVRxxxxxxxx.xxx-x:U1,V1,W1 connection.
+<br>
+<br>8BVPxxxxxxxx.xxx-x: Main filter defect: Replace main filter
+<br>
+<br>8BVIxxxxxxxx.xxx-x: Ground is connected to the X5 connection on contact U, V or W
+<br>
+<br>8BVIxxxxxxxx.xxx-x: Capacitive load: When using long motor cable (> 50m) or cable form third-party manufacturer.
+<br><br>
+  </p>
+ </body>
+</html>

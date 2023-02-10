@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>6055 : Holding brake: Low voltage</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>6055: Holding brake: Low voltage</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Runtime error while monitoring the holding brake controller. The minimum permissible holding brake output voltage was exceeded for a duration of 500 ms. Module-dependent limit values can be found in the user's manual.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>See error number <a href="6029.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/6029.htm">6029</a>.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>Wiring: Excessive voltage drop between the auxiliary supply module's 24V output and the holding brake output of the inverter module. -> Use multiple expansion modules, cable cross-sections
+<br>8B0Cxxxxxxxx.xxx-x: The DC supply to the auxiliary supply module is less than 315VDC
+<br>8B0Cxxxxxxxx.xxx-x: The 24V output of the auxiliary supply module is defective -> Replace module
+<br>8B0Cxxxxxxxx.xxx-x: Overloaded module -> Use larger module or an additional module
+<br>8BVIxxxxxxxx.xxx-x: Faulty holding brake controller or voltage monitor -> Replace module
+<br><br>
+  </p>
+ </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>32018 : Invalid Parameter ID in system module</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>32018: Invalid Parameter ID in system module</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> Parameter-ID
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">UINT</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Before transferring a system module to the ACOPOS, the NC manager reads its parameter ID from the module description. One of the following parameter IDs must be entered at the respective memory location:
+<br>- BRMOD_BSL: ACOPOS BsLoader
+<br>- BRMOD_NCSYS: ACOPOS operating system
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>Transfer of the system module to the ACOPOS is aborted.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>The software object "acp10bsl" or "acp10sys" handled by the NC manager is not a valid NC system module.
+<br>
+<br>The following system modules are available for the ACP10-SW:
+<br>- acp10bsl: ACOPOS BsLoader
+<br>- acp10sys: ACOPOS operating system
+<br>
+<br>The names "acp10bsl" and "acp10sys" are reserved for these system modules and therefore cannot be used in the project for other software objects.
+<br>
+<br>See also error number <a href="32013.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/32013.htm">32013</a>.
+<br><br>
+  </p>
+ </body>
+</html>

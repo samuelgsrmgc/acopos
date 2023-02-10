@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>35246 : SMC: Encoder - Initialization error</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>35246: SMC: Encoder - Initialization error</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> Additional info
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">UDINT</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Error during startup of the encoder. During the initialization of the encoder, an error has occurred.
+<br>
+<br>The additional information (Info1) shows the details:
+<br>0xXXXX0001 ... The EnDat master LKM bit could not be deleted.
+<br>0xXXXX0002 ... Faulty encoder memory checksum in measuring device manufacturer section 2.1.
+<br>0xXXXX0003 ... An Encoder alarm is active.
+<br>0xXXXX0004 ... An Encoder warning is active.
+<br>0xXXXX0005 ... The EnDat2.2 command set is not supported by the encoder.
+<br>0xXXXX0006 ... Write errors in the safe EnDat master configuration parameters.
+<br>0xXXXX0007 ... The encoder parameter "Number of cycles for transferring position value" is invalid.
+<br>0xXXXX0008 ... Faulty encoder memory check sum in the measuring device manufacturer section 2.2.
+<br>0xXXXX0009 ... The function "Adjustable Recovery Time" is not supported by the encoder.
+<br>0xXXXX000A ... EnDat Encoder: Resolution not supported 1.
+<br>0xXXXX000B ... EnDat Encoder: Resolution not supported 2.
+<br>0xXXXX000C ... EnDat Encoder: Resolution not supported 3.
+<br>0xXXXX000D ... EnDat Encoder: Resolution not supported 4.
+<br>0xXXXX000E ... The encoder parameter "Number of single-turn bits" is not supported by the firmware (2).
+<br>0xXXXX000F ... EnDat Encoder: Not safety relevant subdivision position1 not valid
+<br>0xXXXX0010 ... EnDat Encoder: Safe position range or NPV to large
+<br>0xXXXX0013 ... The encoder position changes during the initialization is too large.
+<br>0xXXXX0014 ... Safety configuration parameter incorrect.
+<br>0xXXXX0015 ... Default value for EnDat master register not valid.
+<br>0xXXXX0016 ... LKM bit not set.
+<br>0xXXXX0017 ... EnDat parameter "initializing of function" invalid.
+<br>0xXXXX0018 ... EnDat parameter "memory allocation" invalid.
+<br>0xXXXX0019 ... The encoder parameter "Measurement step for serial data transfer" is not supported by the firmware (5).
+<br>0xXXXX00FC ... An EnDat transfer error has occurred.
+<br>0xXXXX00FF ... An EnDat transfer timeout has occurred.
+<br>
+<br>XXXX .. internal Information
+<br>
+<br>Offset information for safety logger:
+<br>binary data[20..17]: Info1
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>The status SafePositionValid is set to FALSE.
+<br>The status NotErrENC is set to FALSE.
+<br>If a safety function is used which needs an encoder, then the module changes into Functional Fail Safe state.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>The data transfer is disturbed between the encoder and the module. Check the wiring between the encoder and module!
+<br>The encoder is not supported. Check the encoder type!
+<br>The encoder is defect. Change the encoder!
+<br>The module is defect. Change the module!
+<br><br>
+  </p>
+ </body>
+</html>

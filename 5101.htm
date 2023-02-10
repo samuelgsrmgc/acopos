@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>5101 : Cam profile compensation gears: Limit values exceeded</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>5101: Cam profile compensation gears: Limit values exceeded</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Runtime error when cam automats are active during the calculation of a compensation gear. The speed or acceleration limits cannot be maintained with the combination of current parameters, connection curves and compensation paths. On the other hand, the 'effective' master/slave compensation paths result depending on compensation modes, compensation path parameters, multiplication factors and curve periods. Is only registered once following a start or restart.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>The compensation is calculated using excessive values. 
+<br>For example, the maximum slave speed is increased by the entry or exit speed.
+<br>Cam automat movement remains active. However, subsequent errors may occur (e.g. error number <a href="4007.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/4007.htm">4007</a>).
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>'Effective' master compensation path too short. See also error number <a href="37108.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/37108.htm">37108</a>.
+<br>'Effective' master compensation path too long in connection with AUT_COMP_SL_V_MIN.
+<br>'Effective' slave compensation path too short or too long. See also error number <a href="37101.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/37101.htm">37101</a> and
+<br>Error number 37102.
+<br>Maximum speed value of the master axis AUT_MA_V_MAX too large.
+<br>Maximum speed value of the master axis AUT_MA_V_MAX too small in connection with AUT_COMP_SL_V_MIN.
+<br>Exit slope of the curve of the 'old' state is too large.
+<br>Entrance slope of the curve of the 'new' state is too large (multiplication factor of the slave axis).
+<br>Maximum slave speed value AUT_COMP_SL_V_MAX too small.
+<br>Minimum slave speed value AUT_COMP_SL_V_MIN too large.
+<br>Maximum slave acceleration value in the first part of the compensation AUT_COMP_SL_A1_MAX too small.
+<br>Maximum slave acceleration value in the second part of the compensation AUT_COMP_SL_A2_MAX too small.
+<br><br>
+  </p>
+ </body>
+</html>

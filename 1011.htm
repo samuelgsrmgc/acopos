@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>1011 : Quickstop input active</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>1011: Quickstop input active</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Runtime error in quickstop function if the configured digital input is active.
+<br>See also error number <a href="4005.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/4005.htm">4005</a>.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>The 'controller ready' state is reset.
+<br>When 'switch on controller' command: See error number <a href="4005.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/4005.htm">4005</a>.
+<br>
+<br>Default setting QUICKSTOP_DECEL_RAMP=ncA_LIMIT:
+<br>When position control is active (CONTROLLER_MODE=1 or 3):
+<br>Movement stopped with the axis limits and by switching off the controller.
+<br>When speed control is active (CONTROLLER_MODE=2):
+<br>Movement stopped with speed regulated ramp, with axis limits and by switching off the controller.
+<br>When U/f control is active (CONTROLLER_MODE=7): 
+<br>Movement stopped with speed controlled ramp, with axis limits and by switching off the controller.
+<br>When current control is active with commutation (CONTROLLER_MODE=4):
+<br>Movement stopped with the current limits and by switching off the controller.
+<br>
+<br>Setting QUICKSTOP_DECEL_RAMP=ncTRQ_LIMIT:
+<br>Independent of controller mode: Movement is aborted with torque limit.
+<br>
+<br>Setting QUICKSTOP_DECEL_RAMP=ncINDUCTION:
+<br>Independent of controller mode: Movement is aborted with induction stop. See also error number <a href="9001.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/9001.htm">9001</a>.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>See error number <a href="6021.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/6021.htm">6021</a>.
+<br><br>
+  </p>
+ </body>
+</html>

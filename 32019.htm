@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>32019 : Download of NC system module not allowed (the module is on the PLC)</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>32019: Download of NC system module not allowed (the module is on the PLC)</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Two options are available for SG3 target systems for handling the ACOPOS operating system "acp10sys":
+<br>
+<br>1) Store NC operating system on the PLC: No (default setting for SG3)
+<br>The software object "acp10sys" is added to the project as NC system module. It is not stored on the PLC after being transferred from Automation Studio to the PLC. The ACOPOS operating system contained in "acp10sys" is then transferred to the ACOPOS via the NC manager, while "acp10sys" is transferred from Automation Studio to the PLC.
+<br>
+<br>2) Store the NC operating system on the PLC: Yes
+<br>The software object "acp10sys" is added to the project as data object. It is stored on the PLC after being transferred from Automation Studio to the PLC. The ACOPOS operating system contained in "acp10sys" is read from the data object "acp10sys" and transferred to the ACOPOS via the NC manager, after the next CPU restart.
+<br>
+<br>This error is displayed if the NC manager detects that "acp10sys" is being transferred from Automation Studio to the PLC as NC system module, even though an "acp10sys" data object has already been stored on the PLC.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>Transfer of the system module to the ACOPOS is aborted.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>The first option mentioned above is currently selected in the project and the "acp10sys" data object has been stored on the PLC.
+<br>Delete the data object "acp10sys" from the PLC or change the selection in the project to the second option mentioned above and re-insert the ACP10 software to the project.
+<br>See also error number <a href="32013.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/32013.htm">32013</a>.
+<br><br>
+  </p>
+ </body>
+</html>

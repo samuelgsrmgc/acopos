@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>5107 : Cam coupling cannot be started: Parameter outside the valid range</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>5107: Cam coupling cannot be started: Parameter outside the valid range</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> Parameter ID
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">'PARID'</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Response error at start and restart of the cam automat (CMD_CAM_START) if an invalid configuration was detected.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>The cam automat start is not executed.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>The parameter ID of the additional information differentiates between the following causes:
+<br>CAM_MA_S_START
+<br>The current master position has already exceeded CAM_MA_S_START.
+<br>CAM_MA_V_MAX
+<br>The slave speed exceeds the axis limit value. This means that the maximum speed of the master axis or the cam profile slope is too large ((CAM_MA_V_MAX * CAM_SL_S_SYNC / CAM_MA_S_SYNC)> AXLIM_V_POS).
+<br>CAM_SL_S_COMP_MIN
+<br>Slave axis compensation path is smaller than the minimum value (CAM_SL_S_COMP < CAM_SL_S_COMP_MIN)
+<br>CAM_SL_S_COMP_MAX
+<br>Slave axis compensation path is larger than the maximum value (CAM_SL_S_COMP> CAM_SL_S_COMP_MAX)
+<br>CAM_MA_TRIG_WINDOW
+<br>Master axis trigger window is larger than the interval (CAM_MA_TRIG_WINDOW> (CAM_MA_S_SYNC + CAM_MA_S_COMP))
+<br>CAM_MA_COMP_TRIG_WINDOW
+<br>Master axis compensation trigger window is larger than the interval (CAM_MA_COMP_TRIG_WINDOW> (CAM_MA_S_SYNC + CAM_MA_S_COMP))
+<br>CAM_SL_TRIG_WINDOW
+<br>Slave axis trigger window is larger than the interval (CAM_SL_TRIG_WINDOW> (CAM_SL_S_SYNC + CAM_SL_S_COMP))
+<br>CAM_MA_S_TRIG
+<br>Master trigger FIFO exceeds the maximum length. This means the relative trigger position of the master axis is too large or the interval is too small.
+<br>CAM_MA_S_COMP_TRIG
+<br>Master compensation trigger FIFO exceeds the maximum length. This means the relative position compensation trigger of the master axis is too large or the interval is too small.
+<br>CAM_SL_S_TRIG
+<br>Slave trigger FIFO exceeds the maximum length. This means the relative trigger position of the slave axis is too large or the interval is too small.
+<br><br>
+  </p>
+ </body>
+</html>

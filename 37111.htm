@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>37111 : Cam profile data: Difference between polynomial value y(xn) and slave period</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>37111: Cam profile data: Difference between polynomial value y(xn) and slave period</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> Difference
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">REAL</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Response error at the last data segment of the cam profile download (AUT_POLY_DATA). The polynomial function value y(xn) is checked to see if it corresponds to the slave interval at the end of the master interval. The function value is calculated as a float number. The intervals (periods) are placed in the cam profile data as whole number. This warning is generated if there is a deviation greater than 0.1 and less than 1.0. See also error number <a href="5304.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/5304.htm">5304</a>.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>The cam profile is accepted, but the deviation may cause position jumps during active cam profile coupling.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>Numeric error while calculating the cam profile polynomial.
+<br>The calculation algorithm does not account for the fact that only whole-number intervals are allowed.
+<br><br>
+  </p>
+ </body>
+</html>

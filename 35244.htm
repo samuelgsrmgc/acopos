@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>35244 : SMC: Encoder - Received position not valid</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>35244: SMC: Encoder - Received position not valid</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> Additional info
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">UDINT</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Error at the encoder input. During the reading of the position, an error has occurred.
+<br>
+<br>The additional information (Info1) shows the details:
+<br>Bit0 (0x00000001) ... Faulty EnDat transfer timing.
+<br>Bit2 (0x00000004) ... Faulty CRC of receive register 1S.
+<br>Bit3 (0x00000008) ... Faulty CRC of receive register 4.
+<br>Bit4 (0x00000010) ... Faulty CRC of error register.
+<br>Bit5 (0x00000020) ... The safety cycle has not been completed.
+<br>Bit6 (0x00000040) ... The consecutive number of the data storage register 4 is faulty.
+<br>Bit7 (0x00000080) ... The consecutive number of the data storage register 2 is faulty.
+<br>Bit8 (0x00000100) ... The consecutive number of the data storage register 3 is faulty.
+<br>Bit9 (0x00000200) ... Error bit in error register is set.
+<br>Bit10 (0x00000400) ... The forced dynmaic test of the EnDat master is faulty.
+<br>Bit11 (0x00000800) ... The forced dynmaic test of the encoder is faulty.
+<br>Bit12 (0x00001000) ... Position compare (Pos1/Pos2) is faulty.
+<br>Bit13 (0x00002000) ... Error encoder mask is faulty.
+<br>Bit14 (0x00004000) ... Encoder parameter read error.
+<br>
+<br>Offset information for safety logger:
+<br>binary data[20..17]: Info1
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>The status SafePositionValid is set to FALSE.
+<br>The status NotErrENC is set to FALSE.
+<br>If a safety function is used which needs an encoder, then the module changes into Functional Fail Safe state.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>The data transfer is disturbed between the encoder and the module. Check the wiring between the encoder and module!
+<br>The encoder is defect. Change the encoder!
+<br>The module is defect. Change the module!
+<br><br>
+  </p>
+ </body>
+</html>

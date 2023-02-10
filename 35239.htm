@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>35239 : SMC Functional Fail Safe: Homing failed</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>35239: SMC Functional Fail Safe: Homing failed</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> Additional info
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">UDINT</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Error during encoder homing.
+<br>
+<br>The additional information (Info1) shows the details:
+<br>0x00000001 ... Homing timeout elapsed.
+<br>0x00000002 ... Movement direction changed during waiting at reference pulse.
+<br>0x00000003 ... Max. trigger speed exceeded during waiting at reference pulse.
+<br>0x00000004 ... Huge movement during homing.
+<br>0x00000005 ... Given homing offset causes a position outside the INT32 range.
+<br>0x00000006 ... Given homing offset causes a position outside the safe absolute encoder range.
+<br>
+<br>Offset information for safety logger:
+<br>binary data[20..17]: Info1
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>The module changes into Functional Fail Safe state.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>Check the safety application!
+<br>Check the reference switch!
+<br>Check the homing procedure on the ACOPOS!
+<br><br>
+  </p>
+ </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>64506 : Recovery power limiter active (deceleration too high)</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>64506: Recovery power limiter active (deceleration too high)</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Runtime info when monitor is active (MSG_CONF_ERROR_NUMBER) if the set stator current of the quadrature component ICTRL_ISQ_REF is limited by the recovery power limiter.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>None
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>Set value generation: The generator power is higher than the maximum braking power of the braking resistor when the axis is delayed. If the device is in a DC bus network and the sum of the generator power is always smaller than the sum of the maximum braking power of all braking resistors, then the recovery power limiter is switched off (PLIM_MODE=0).
+<br>
+<br>Incorrect configuration of recovery power limiter: Resistance of the external braking resistor R_BLEEDER_EXT is too low or stator resistance MOTOR_STATOR_RESISTANCE is too high.
+<br><br>
+  </p>
+ </body>
+</html>

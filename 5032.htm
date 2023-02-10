@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>5032 : Acceleration too low - braking distance exceeds positive SW limit</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>5032: Acceleration too low - braking distance exceeds positive SW limit</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Response error when starting a movement or writing the acceleration override. A movement is active and the acceleration was reduced to the point that the braking distance cannot be maintained up to the positive SW limit.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>The requested movement start is not executed, and the acceleration override is not accepted.
+<br>This does not interrupt the active movement.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>Movement with absolute target position at the positive SW limits and start of a new movement with reduced acceleration parameters shortly before the target.
+<br>See also error number <a href="5001.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/5001.htm">5001</a>.
+<br><br>
+  </p>
+ </body>
+</html>

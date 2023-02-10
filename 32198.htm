@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>32198 : Error downloading operating system to ACOPOS (additional info in Logger)</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>32198: Error downloading operating system to ACOPOS (additional info in Logger)</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>The data in the "acp10sys" object are transferred as operating system to the ACOPOS by the NC manager. This error number is output if an error occurs during this procedure. Further details are also provided in the Logger about the error which occurred.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>The ACOPOS startup function is aborted.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>Error during the transfer of an operating system to the ACOPOS.
+<br>The exact cause can be determined from the details entered in the Logger.
+<br>
+<br>The info for the Logger numbers below contains the following details:
+<br>- 10940: ACP10 software error number (described in this document)
+<br>- 10941: ACP10 software error number (described in this document)
+<br>- 10942: Info for the error number in 10941 (or 10940, if 10941 is not provided)
+<br>- 10943: Parameter ID, for which the error occurred
+<br>- 10965: Node number of the ACOPOS, for which the error occurred
+<br>
+<br>See also error number <a href="32018.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/32018.htm">32018</a>.
+<br><br>
+  </p>
+ </body>
+</html>

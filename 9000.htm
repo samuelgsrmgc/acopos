@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>9000 : Heatsink temperature sensor: Overtemperature - Movement stopped</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>9000: Heatsink temperature sensor: Overtemperature - Movement stopped</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> Temperature limit
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">REAL</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Runtime error if the temperature of the heat sink temperature sensor TEMP_HEATSINK exceeds the limit (see INFO).
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>The 'controller ready' state is reset.
+<br>When 'switch on controller' command: See error number <a href="4005.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/4005.htm">4005</a>.
+<br>
+<br>8V, 8BVI, 8CVI, 80V, 8DI:
+<br>Default setting STOP_ERR_DECEL_RAMP=ncA_LIMIT:
+<br>When position control is active (CONTROLLER_MODE=1 or 3):
+<br>Movement stopped with the axis limits and by switching off the controller.
+<br>When speed control is active (CONTROLLER_MODE=2):
+<br>Movement stopped with speed regulated ramp, with axis limits and by switching off the controller.
+<br>When U/f control is active (CONTROLLER_MODE=7): 
+<br>Movement stopped with speed controlled ramp, with axis limits and by switching off the controller.
+<br>When current control is active with commutation (CONTROLLER_MODE=4):
+<br>Movement stopped with the current limits and by switching off the controller.
+<br>
+<br>Setting STOP_ERR_DECEL_RAMP=ncINDUCTION:
+<br>Independent of controller mode: Movement is aborted with induction stop. See also error number <a href="9001.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/9001.htm">9001</a>.
+<br>
+<br>Setting STOP_ERR_DECEL_RAMP=ncCTRL_OFF:
+<br>Independent of controller mode: Movement is aborted by switching off the controller and the power section immediately. The drive has no electrical torque.
+<br>
+<br>8B0P:
+<br>The chopper output and the CR_OK output are switched off, the main relay is opened and the RDY-, RUN- and ERR LEDs flashes synchonous in 3 seconds cycle. The error condition can only be exited by switching off the mains supply.
+<br>
+<br>8BVP:
+<br>The IGBT power stage is switched off.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>Invalid operational conditions: 
+<br>- Environmental temperature is higher than 40°C while in operation. -> Check the cool air temperature right after opening the intake.
+<br>- Moderate air flow in the ACOPOS servo drive. -> Check the mounting direction and the covers on the intake opening.
+<br>
+<br>ACOPOS servo drive defect:
+<br>-Cooling fan defect. -> Check if the fan makes any sound when the controller is on. The sound from the fan is louder when the heat sink temperature is high.
+<br>- Problem with heat sink temperature measurement: -> When the controller is switched off, compare the environmental temperature with the temperature of the heat sink temperature sensor TEMP_HEATSINK.
+<br>- If the thermal transition resistance between IGBT and the heat sink is too high, check the heat dissipation past between the heat sink and IGBT. -> Switch the ACOPOS servo drive.
+<br><br>
+  </p>
+ </body>
+</html>

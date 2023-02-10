@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>5024 : Cyclic set value mode aborted: Set positions missing</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>5024: Cyclic set value mode aborted: Set positions missing</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Runtime error in the operating mode, 'cyclic, external set values'. Linear extrapolation occurs if a new set position (CYC_MASTER_SET_POS) is not received within the master cycle. This error is registered if this failure occurs several times consecutively.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>See error number <a href="5036.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/5036.htm">5036</a>.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>The operating mode 'cyclic, external set values' is activated too early, before set values are sent.
+<br>See error number <a href="5110.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/5110.htm">5110</a>.
+<br><br>
+  </p>
+ </body>
+</html>

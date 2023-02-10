@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>32060 : Timeout for cyclic data from drive - Indications invalid (network error ?)</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>32060: Timeout for cyclic data from drive - Indications invalid (network error ?)</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Runtime error following successfully initialized network communication between the NC manager (on the PLC) and the ACOPOS if the NC manager did not receive any cyclic data from the ACOPOS for a specific number of NC task cycles.
+<br>NC_TimeoutCycles, the number of NC task cycles which leads to this error, depends on the network being used and the network properties of the ACOPOS:
+<br>
+<br>TC: Task class of cyclic NC task
+<br>PL: POWERLINK
+<br>
+<br>CAN network:
+<br>- TC_Timeout = 2 * TC_CycleTime + TC_Tolerance
+<br>- NC_TimeoutCycles = 1 + (2*TC_Timeout) / TC_CycleTime
+<br>
+<br>POWERLINK network:
+<br>- NC_TimeoutCycles = 2 + (2*PL_CycleTime) / TC_CycleTime
+<br>
+<br>POWERLINK network for ACOPOS with "multiplexed" property:
+<br>- NC_TimeoutCycles = 2 + (2*PL_MuxCycleTime) / TC_CycleTime
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>The NC manager switches into the "Network communication not active" state for this ACOPOS. This can be seen in the following status indicators:
+<br>- network.init = ncFALSE
+<br>- network.phase = 0
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>CAN network:
+<br>The task class cycle time or task class tolerance are defined too low for the task class of the NC manager task.
+<br>
+<br>POWERLINK network:
+<br>The powerlink cycle time is defined too low.
+<br>
+<br>Overload, malfunction or interruption of the network connection or ACOPOS failure.
+<br>See also error number <a href="1004.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/1004.htm">1004</a>.
+<br>See also error number <a href="1012.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/1012.htm">1012</a>.
+<br><br>
+  </p>
+ </body>
+</html>

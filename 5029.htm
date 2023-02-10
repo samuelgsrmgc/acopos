@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>5029 : Trigger ignored - remaining distance exceeds SW limit</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>5029: Trigger ignored - remaining distance exceeds SW limit</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Runtime error when basis movement is active in the 'stop after trigger' mode. The trigger event has occurred and the target position (latched position plus remaining distance) is outside the SW limits.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>The trigger event is ignored and the movement remains active.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>The remaining distance is too large or the SW limits are incorrectly defined.
+<br>An incorrect position (reference system to the trigger sensor) was set due to a previous homing procedure.
+<br>Trigger sensor too close to the end of the movement range.
+<br>Failure of the actual trigger edge (print marks, product edge) and triggering at a subsequent, undesired trigger edge.
+<br>See also error number <a href="5001.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/5001.htm">5001</a>.
+<br><br>
+  </p>
+ </body>
+</html>

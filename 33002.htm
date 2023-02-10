@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>33002 : Floating-Point exception</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>33002: Floating-Point exception</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> EPC
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">UDINT</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Runtime error while processing R4 data if the floating point unit (FPU) detects an exception condition.
+<br>Such exceptions arise from calculations with invalid floating point numbers or when the result exceeds the valid range. This error is registered only once and only on the 1. ACOPOSmulti axis (channel).
+<br>Valid range of 32bit floating point numbers: See error number <a href="73.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/73.htm">73</a>.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>The faulty calculation is aborted with an invalid result. The reaction depends on the further processing of this invalid data.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>Invalid floating point numbers while writing parameters, sending cyclic data to the drive or while receiving data from a network coupling.
+<br>Invalid numbers can result e.g. in following cases: 
+<br>- Calculation with 64bit floating point numbers (double float) and conversion (cast) to float.
+<br>- Using an integer number within the data area of a float number (wrong mapping).
+<br>Large position jumps on inputs of function blocks or on the axis of the cam profile automat - e.g. caused by a homing procedure when a master/slave coupling is still active.
+<br>Extreme design of a cam profile in conjunction with a very high master velocity.
+<br><br>
+  </p>
+ </body>
+</html>

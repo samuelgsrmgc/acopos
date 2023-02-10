@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>6046 : Phasing: No rotor movement</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>6046: Phasing: No rotor movement</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Runtime error during phasing (CMD_PHASING=ncSTART) in dither mode (PHASING_MODE=2). Speed SCTRL_SPEED_ACT is too low during the 'phasing'.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>Phasing is aborted.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>Rotor blocked:
+<br>- Motor with holding brake, blocked due to external load, motor with very high moment of inertia. -> Check the speed SCTRL_SPEED_ACT during the 'phasing'.
+<br>
+<br>Incorrect motor configuration:
+<br>- No torque is created when the phasing current PHASING_CURR is too low. -> Check the speed SCTRL_SPEED_ACT during the 'phasing'.
+<br>
+<br>Encoder position or speed contains an error: See error number <a href="4014.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/4014.htm">4014</a>.
+<br>
+<br>Motor wiring error: At least two motor phases are disconnected, loose terminal. See error number <a href="6045.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/6045.htm">6045</a>.
+<br><br>
+  </p>
+ </body>
+</html>

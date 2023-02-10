@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>25 : Burn system module only allowed immediately after download</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>25: Burn system module only allowed immediately after download</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Response error in BsLoader mode during the 'burn NC system module' command. There is no valid NC system module ('acp10sys.br' or 'acp10bsl.br') present on the drive or the burn command was not executed immediately following the NC system module download.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>NC system module is identified as invalid and cannot be saved (burned to the FLASH memory).
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>NC system module download was not executed.
+<br>NC system module is malfunctioning, is invalid or is incompatible.
+<br>Sequence error during NC system module download.
+<br>See also error number <a href="32018.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/32018.htm">32018</a>.
+<br><br>
+  </p>
+ </body>
+</html>

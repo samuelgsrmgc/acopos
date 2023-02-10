@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>7220 : DC bus: Nominal voltage detection: Voltage not allowed</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>7220: DC bus: Nominal voltage detection: Voltage not allowed</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> DC bus voltage
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">REAL</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Runtime error using the 'switch-on controller' command.
+<br>The main relay is open.
+<br>If in ACOPOS servo drives with internal DC bus power supply (8V1180.xx-x - 8V128M.xx-x) the filtered DC bus voltage UDC_FILTER is in the not allowed range [1.1*SQRT(2)*240, 0.9*SQRT(2)*380] VDC 
+<br>or
+<br>If (PHASE_MON_IGNORE = 1) and the following condition is fulfilled:
+<br>  8Vxxxx.00-2....UDC_FILTER < 484VDC
+<br>  8Vxxxx.50-2....UDC_FILTER < 293VDC
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>See error number <a href="7210.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/7210.htm">7210</a>.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>See <a href="javascript:if(confirm('http://www.xn--brtschi-5wa.ch/acp10_drivefunctions/power_transmission.html  \n\n¸ÃÎÄ¼þÎ´±» Teleport Pro ÏÂÔØ£¬ÒòÎª ËüÎ»ÓÚÆðÊ¼µØÖ·ÒÔÉèÖÃµÄ±ß½çÒÔÍâµÄÓò»òÂ·¾¶ÖÐ¡£  \n\nÄãÏëÒª´Ó·þÎñÆ÷´ò¿ªËüÂð?'))window.location='http://www.xn--brtschi-5wa.ch/acp10_drivefunctions/power_transmission.html'" tppabs="http://www.xn--brtschi-5wa.ch/acp10_drivefunctions/power_transmission.html">Power transmission</a>
+<br>
+<br>Invalid mains: Mains voltage or DC bus voltage is invalid. -> Check the DC bus voltage.
+<br><br>
+  </p>
+ </body>
+</html>

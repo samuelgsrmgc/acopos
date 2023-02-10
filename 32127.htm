@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>32127 : Error deleting Write COB for Broadcast Command (external set position mode)</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>32127: Error deleting Write COB for Broadcast Command (external set position mode)</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> CAN-ID (in HB and MHB) and Status of CAN_deleteCOB() (in MLB and LB)
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">UDINT</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>For the operation of ACOPOS servo drives via the CAN network in external set position mode, the Broadcast command is sent to all connected ACOPOS nodes from another PLC. Therefore, the Write COB (set by default) for each CAN interface specified in the NC configuration for the Broadcast command must be deleted using the CAN_deleteCOB() function to be able to replace it with a Read COB. This error number is output if an error occurs with this procedure.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>Initialization of all ACOPOS nodes connected to this CAN interface is aborted. All corresponding NC objects can no longer be operated.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>Status of CAN_deleteCOB(): See CAN library error numbers.
+<br><br>
+  </p>
+ </body>
+</html>

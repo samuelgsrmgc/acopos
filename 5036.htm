@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>5036 : Acceleration stop limit exceeded</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>5036: Acceleration stop limit exceeded</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> Acceleration
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">REAL</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Runtime error when cam automat is active or in the operating mode, 'cyclic, external set values'. The acceleration of the set position exceeds the defined maximum value (LIM_A_SET_STOP).
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>Default setting STOP_ERR_DECEL_RAMP=ncA_LIMIT:
+<br>Movement stopped with the axis limits and by switching off the controller.
+<br>
+<br>For different settings of STOP_ERR_DECEL_RAMP see error number <a href="4007.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/4007.htm">4007</a>.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>When active cam automats:
+<br>Maximum value (LIM_A_SET_STOP) too small.
+<br>Set value generation is too dynamic. Speed and acceleration are too high due to:
+<br>Overriding additional movements on the additive axes.
+<br>External encoder with 'coarse' resolution as master axis.
+<br>The dynamics of the master movement are not taken into consideration when forming the curve.
+<br>External master with 'unknown' movement dynamics.
+<br>Online change of the multiplication factors.
+<br>See error number <a href="5101.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/5101.htm">5101</a> for compensation gears.
+<br>Cam automat is terminated from a curve with a slope not equal to 0 (EVENT_ST_INDEX=255).
+<br>Direct start of the cam automat with moved master from an active basis movement.
+<br>Set position jumps due to:
+<br>Referencing the master axis or the additive axes.
+<br>Jump-causing value change on the additive axes.
+<br>Small positions offset between cam profiles and within the polynomial. See error number <a href="37111.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/37111.htm">37111</a>.
+<br>Network error while coupling the master axis to a cyclic network position.
+<br>Lag error stop in the master axis (set value jumps to actual value).
+<br>
+<br>In the operating mode, 'cyclic, external set values':
+<br>Maximum value (LIM_A_SET_STOP) too small.
+<br>Set value generation is too dynamic. Speed and acceleration are too high.
+<br>Faulty set value generation.
+<br>Actual/set value set falsely after the controller is switched on or following a drive-controlled movement (homing).
+<br>Jump-causing value change of the additive offset (CYC_ADD_SET_PARID).
+<br>Network error.
+<br><br>
+  </p>
+ </body>
+</html>

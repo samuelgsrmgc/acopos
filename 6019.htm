@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>6019 : ACOPOS: Overcurrent</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>6019: ACOPOS: Overcurrent</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Runtime error if at least one of the six transistors in the inverter or the transistor for the braking resistor registers overcurrent.
+<br>When using the following ACOPOS servo drives, this error is also registered for overcurrent in the current transformer (U and V):
+<br>8V1180.xx-x....95.4 Apeak
+<br>8V1320.xx-x....160.4 Apeak
+<br>8V1640.xx-x....400.0 Apeak
+<br>8V128M.xx-x....585.0 Apeak
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>Synchronous motor: Movement stop with short-circuit braking.
+<br>Asynchronous motor: Movement stop by switching off the power section and switching on the holding brake.
+<br>If the error occurs two times consecutively, then a movement is stopped by switching off the power section and switching on the holding brake.
+<br>
+<br>Setting STOP_ERR_DECEL_RAMP=ncCTRL_OFF:
+<br>Movement is aborted by switching off the controller and the power section immediately. The drive has no electrical torque.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>Motor wiring error:
+<br>- Phase and ground conductor switched. -> Check if the ground conductor PE in the motor cable on the X5 plug is connected with motor phase U, V or W.
+<br>- Short circuit in the motor cable. Short circuit between two phases, ground PE and phase or shield and phase. -> Check the resistance between U-V, V-W, W-U, U-PE, V-PE, W-PE, U-shield, V-shield and W-shield.
+<br>
+<br>Motor defect:
+<br>- Winding short in a motor phase. -> Check on the motor plug and on the motor terminals if two of the three motor impedances (phase-phase) have lowered.
+<br>- Winding short between two motor phases. -> Check on the motor plug and on the motor terminals if one of the three motor impedances (phase-phase) has lowered.
+<br>- Housing short between motor phase and housing. -> Using a continuity tester or a megohmmeter, check the insulation resistance between the motor phases and the housing.
+<br>
+<br>ACOPOS servo drive defect:
+<br>See error number <a href="6052.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/6052.htm">6052</a>.
+<br>See error number <a href="6054.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/6054.htm">6054</a>.
+<br>- Alloyed transistor or control for braking resistor defective. -> Check if the error is registered when the DC bus voltage UDC_ACT is greater than the switch-on voltage of the braking resistor UDC_BLEEDER_ON.
+<br>
+<br>External braking resistor defect: 
+<br>- Short circuit. -> Check if the error is also registered when the external braking resistor is not connected.
+<br>
+<br>Set current value jump: See error number <a href="9300.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/9300.htm">9300</a>. This cause is more likely on devices with current transformer monitoring.
+<br><br>
+  </p>
+ </body>
+</html>

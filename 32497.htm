@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>32497 : Task class for handling of cyclic data with PLCopen in acp10cfg is invalid</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>32497: Task class for handling of cyclic data with PLCopen in acp10cfg is invalid</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> Maximum task class number
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">USINT</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>For SG4 targets in the ACP10 configuration (acp10cfg) for each POWERLINK interface with the parameter "Task class for handling of cyclic data with PLCopen (only for SG4)" that task class can be selected, in which the cyclic PLCopen data are to be copied from a program to the POWERLINK network and vice versa.
+<br>
+<br>If the BR module acp10cfg containes an invalid value for this parameter, then this error is displayed with the maximum task class number as additional information. Moreover, the value contained in acp10cfg is entered in the network trace for each POWERLINK interface with node number 0 with ParID TASKCL_CycDat_PLCopen.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>The ACOPOS startup function is aborted for all ACOPOS modules connected to this POWERLINK interface.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>Correct the value in the ACP10 configuration.
+<br><br>
+  </p>
+ </body>
+</html>

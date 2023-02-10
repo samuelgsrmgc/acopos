@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>6062 : CTRL Speed controller: Speed error stop limit exceeded</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>6062: CTRL Speed controller: Speed error stop limit exceeded</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> Limit value AXLIM_DV_STOP
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">REAL</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Runtime error when controller is active. The absolute value of the speed error SCTRL_SPEED_ERROR exceeds the limit value AXLIM_DV_STOP.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>See error number <a href="9001.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/9001.htm">9001</a>.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>Speed error limit too small (AXLIM_DV_STOP).
+<br>
+<br>Incorrect configuration for set value generation: See error number <a href="4007.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/4007.htm">4007</a>.
+<br>Incorrect controller configuration: See error number <a href="4007.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/4007.htm">4007</a>.
+<br>Current limiting: See error number <a href="4007.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/4007.htm">4007</a>.
+<br>Encoder speed contains an error: See error number <a href="4014.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/4014.htm">4014</a>.
+<br>Motor wiring error: See error number <a href="6044.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/6044.htm">6044</a>.
+<br>Motor wiring error: See error number <a href="6045.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/6045.htm">6045</a>.
+<br>Motor defect: See error number <a href="6045.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/6045.htm">6045</a>.
+<br>ACOPOS defect: See error number <a href="6045.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/6045.htm">6045</a>.
+<br><br>
+  </p>
+ </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>35096 : SMC Fail Safe: Homing - Configuration error</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>35096: SMC Fail Safe: Homing - Configuration error</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> Additional info
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">UDINT</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Configuration error of the homing unit.
+<br>
+<br>The additional information (Info1) shows the details:
+<br>0x00000001 ... Maximal trigger speed is out of range.
+<br>0x00000002 ... Homing mode "Reference Switch" selected, but no reference switch connected.
+<br>0x00000003 ... Homing mode "Home Offset" or "Home Offset with Correction" selected, but no absolute encoder connected.
+<br>0x00000004 ... Homing mode "Home Offset with Correction" selected, but SMP not configured.
+<br>0x00000006 ... SMP is configured and SMP range is greater than max. safe abs. encoder range.
+<br>0x00000007 ... SLP is configured and SLP range is greater than max. safe abs. encoder range.
+<br>0x00000008 ... Plugged encoder doesn't support a safe reference pulse.
+<br>0x00000009 ... Speed tolerance is out of range.
+<br>0x0000000A ... Max. trigger speed is too big to emulate reference pulses.
+<br>0x0000000B ... Homing bit of control word is set but not used.
+<br>0x0000000C ... RefSwitch bit of control word is set but not used.
+<br>0x0000000D ... Homing position is out of SMP position window.
+<br>0x0000000E ... Homing mode "Direct with reference pulses" selected, but not supported.
+<br>
+<br>Offset information for safety logger:
+<br>binary data[20..17]: Info1
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>The module changes into Fail Safe state.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>Check the configuration in the SafeDESIGNER!
+<br>Check the safety application!
+<br><br>
+  </p>
+ </body>
+</html>

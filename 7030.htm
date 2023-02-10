@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>7030 : Encoder: Incremental signal amplitude too large</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>7030: Encoder: Incremental signal amplitude too large</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> Slot
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">USINT</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Runtime error in an encoder with activated monitor. 
+<br>
+<br>The monitor is activated with the following configurations:
+<br>- Homing the encoder position (CMD_HOMING, CMD_ENCOD2_HOMING, CMD_ENCOD3_HOMING).
+<br>- Encoder position used for drive control (VCTRL_S_ACT_PARID, PCTRL_S_ACT_PARID).
+<br>- Switch on the drive control (CMD_CONTROLLER). See also error number <a href="4005.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/4005.htm">4005</a>.
+<br>- Encoder position used for cam profile linkage (CAM_MA_AXIS).
+<br>- Encoder position used for cam automat (AUT_MA_AXIS, AUT_MA_AXIS_VAX1, AUT_MA_ADD_AXIS, AUT_MA_ADD_AXIS_VAX1, AUT_SL_ADD_AXIS, AUT_SL_ADD_AXIS_VAX1).
+<br>- Encoder position used for drum sequencer (DRUMSEQ_MA_AXIS).
+<br>- Encoder position used for network coupling (MA1/2/3_CYCLIC_SEND).
+<br>- Encoder position used for encoder emulation output value (ENCOD2/3_OUT_PARID).
+<br>- Encoder position used for Latch (LATCH1/2_VALUE_PARID).
+<br>- Encoder position used for cyclic set value input (CYC_ABS_MOVE_PARID).
+<br>- Encoder position used for FUB Pointer parameter ID (e.g. PID_IN_PARID etc).
+<br>
+<br>The amplitude of the sinusoidal AB signals is larger than 99% of the maximum amplitude which can be displayed (see ACOPOS user's manual).
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>'Switch on controller' command: See error number <a href="4005.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/4005.htm">4005</a>.
+<br>'Homing' command: See error number <a href="5034.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/5034.htm">5034</a>.
+<br>Other commands: The command is not executed.
+<br>
+<br>When controller is active:
+<br>Position and motor encoder with synchronous motor: Movement stopped with short-circuit braking and by switching off the controller.
+<br>Position and motor encoder with asynchronous motor: Movement stopped with short-circuit braking and by switching off the controller.
+<br>Position encoder of an active two-encoder position controller: See error number <a href="4007.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/4007.htm">4007</a>.
+<br>Setting STOP_ERR_DECEL_RAMP=ncCTRL_OFF: Movement is aborted by switching off the controller and the power section immediately. The drive has no electrical torque.
+<br>
+<br>Data connections:
+<br>Encoder for network coupling: See error number <a href="1008.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/1008.htm">1008</a>.
+<br>Encoder for cam automat: See error number <a href="5111.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/5111.htm">5111</a>.
+<br>
+<br>Status:
+<br>Position or motor encoder: The 'controller ready' state is reset.
+<br>The 'homing position valid' state is reset.
+<br>The 'commutation valid' state is reset.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>No encoder supply or supply contains an error.
+<br>Sense +5V or Sense COM is not connected.
+<br>AB signal level of the encoder does not meet the specification of the plug-in card (check encoder data sheet).
+<br>AB encoder connection is interrupted or defective. Check wiring guidelines.
+<br>Encoder read head is not adjusted.
+<br>Encoder read head mounting tolerances are too large throughout the movement area.
+<br>Encoder measure is no longer clean.
+<br>Encoder is not connected.
+<br>Encoder defective.
+<br>AC120 or AC121 plug-in card defect.
+<br>
+<br>Wiring guidelines:
+<br>1. Check open line, line termination, loose contacts and wiring errors
+<br>2. Check the periodic occurences of disturbances. Inductive switching elements such as contactors or relays are to be equipped with corresponding suppressor elements such as varistors, RC elements or damping diodes.
+<br>3. To prevent the effects of disturbances motor lines, encoder lines, controller lines, and data lines must be properly shielded.
+<br>4. All electrical connections are to be kept as short as possible.
+<br>5. On all plug-in cards, the two screws used to fasten the module must be tightened so that the mounting bracket is connected to ground.
+<br>6. Shielded cables with copper mesh or tinned copper mesh are to be used. Twisting or extending the protective mesh using single conductors is not allowed. Unused cable conductors are to be grounded on both sides if possible.
+<br>7. The cable shield must be attached to the shield connector. Cable shields are to be attached to the designated shield terminals and the plug housing.
+<br>8.1. Cable connection via DSUB plug: The cable shield must be connected using the designated clamp in the metallic or metal plated plug housing. The fastening screws must be tightened.
+<br>8.2. Cable connection via terminals: The cable shield must be attached to the shield connection terminal.
+<br>8.3. Cable connection via RJ45 plug: Grounding the cable shield as well provides an improvement in EMC properties. Both sides should be properly grounded near the connector.
+<br>9. On the motor side, the encoder cable shield is connected to the motor housing using the encoder plug and connected to ground via the machine. Unplug the encoder cable on the module side. Measure the resistance between cable shield (DSUB Plug housing) to ground (ground connection in the switch cabinet). The resistance may not exceed 0.2 Ohm.
+<br>10. The cable shield for the motor line or the connection cable for the external braking resistor is connected with the housing of the ACOPOS via the grounding plate using the grounding clamp provided.
+<br>11. On the motor side, the cable shield of the motor line is connected to the motor housing using the motor plug and connected to ground via the machine. The cable shield on the connection cable for the external braking resistor must be connected with the housing of the braking resistor.
+<br><br>
+  </p>
+ </body>
+</html>

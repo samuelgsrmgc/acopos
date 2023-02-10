@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>32284 : Ext. coupling data: With this AR/NC version only for TC1 with synchr. output</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>32284: Ext. coupling data: With this AR/NC version only for TC1 with synchr. output</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> Number of NC Manager task class
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">USINT</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Extended coupling data are used then for a network interface, if "Extended coupling data for ACP10_MC_BROADCAST=Yes" is defined for this network interface in the NC configuration.
+<br>
+<br>With AR versions before A3.09 (respectively before A4.01) or ACP10 versions before V2.310 this is only possible under the following restrictions:
+<br>- Cyclic #1 must be defined as NC manager task class
+<br>- For this task class, output data must be written in synchronization with the network
+<br>
+<br>If one of these restrictions is not fulfilled when using these versions, this error is indicated.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>Processing of the corresponding NC action is aborted.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>Change the AR version to A3.09 or higher (respectively A4.01 or higher) and the ACP10 version to V2.310 or higher.
+<br>With these versions extended coupling data can be used under the following conditions:
+<br>- See error number <a href="32285.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/32285.htm">32285</a>
+<br>- See error number <a href="32286.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/32286.htm">32286</a>
+<br>
+<br>If AR versions before A3.09 (respectively before A4.01) or ACP10 versions before V2.310 are to be further used, the configuration must be modified in such a way that the restrictions described above are fulfilled.
+<br>Define "Task class for NC Manager task=Cyclic #1" in the NC configuration.
+<br>Select for the task class Cyclic #1 in the system configuration that output data is written in synchronization with the network: 
+<br>- Automation Studio before V3.0.90: "Output without jitter"
+<br>- Automation Studio from V3.0.90 on: "I/O output delay=delay to end of cycle"
+<br><br>
+  </p>
+ </body>
+</html>

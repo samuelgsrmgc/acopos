@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>32009 : Error sending Write Request (network error ?)</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>32009: Error sending Write Request (network error ?)</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> Status of CAN_sendCOB()
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">UINT</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>For the operation of ACOPOS servo drives via the CAN network, the NC manager first sends a Write Request telegram with the CAN_sendCOB() function from the PLC to the ACOPOS for transferring a parameter value to the ACOPOS. This error number is output if an error occurs with this procedure.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>Resets the interface of the corresponding write channel.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>Overload, malfunction or interruption of the network connection or ACOPOS failure.
+<br>See also error number <a href="1004.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/1004.htm">1004</a>.
+<br>Status of CAN_sendCOB(): See CAN library error numbers.
+<br><br>
+  </p>
+ </body>
+</html>

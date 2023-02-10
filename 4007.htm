@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>4007 : Lag error stop limit exceeded</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>4007: Lag error stop limit exceeded</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> Current lag error
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">REAL</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Runtime error when position controller is active if the lag error PCTRL_LAG_ERROR exceeds the configured lag error limit value AXLIM_DS_STOP.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>Default setting STOP_ERR_DECEL_RAMP=ncA_LIMIT:
+<br>Movement stopped with speed regulated ramp, with axis limits and by switching off the controller.
+<br>
+<br>Setting STOP_ERR_DECEL_RAMP=ncINDUCTION:
+<br>Independent of controller mode: Movement is aborted with induction stop. See also error number <a href="9001.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/9001.htm">9001</a>.
+<br>
+<br>Setting STOP_ERR_DECEL_RAMP=ncCTRL_OFF:
+<br>Independent of controller mode: Movement is aborted by switching off the controller and the power section immediately. The drive has no electrical torque.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>Lag error limit too small (AXLIM_DS_STOP).
+<br>
+<br>Incorrect configuration for set value generation:
+<br>- Parameters for acceleration, deceleration or speed too large (e.g. AXLIM_A1_NEG, BASIS_MOVE_V_POS,..).
+<br>
+<br>Incorrect controller configuration:
+<br>- Controller is set too weak.
+<br>- Feed forward incorrectly configured (e.g. prediction time = 0).
+<br>- Unstable control loop.
+<br>
+<br>Current limiting:
+<br>- Increased current. See error number <a href="9030.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/9030.htm">9030</a>.
+<br>- EMF: Operating speed too high and/or network voltage too low. Check if the motor is being run within the voltage limit sqrt(ICTRL_USD_REF^2+ ICTRL_USQ_REF^2)> UDC_ACT/sqrt(3). 
+<br>- Current limiting: Check if the current ICTRL_ISQ_REF is limited with the limits sqrt(2)* MOTOR_CURR_MAX or sqrt(2)* ACOPOS_CURR_MAX. 
+<br>- Torque limiting: Check if the set value of the current controller ICTRL_ISQ_REF is limited with the 4 quadratic torque limiter (LIM_T1_POS, LIM_T1_NEG, LIM_T2_POS, LIM_T2_NEG, LIM_T1_POS_OVR, LIM_T1_NEG_OVR, LIM_T2_POS_OVR, LIM_T2_NEG_OVR und LIM_T_OVR_GRP).
+<br>- ISQ-filter limiting: Check if the set value of the current controller ICTRL_ISQ_REF is limited with one of the ISQ-filter.
+<br>- Under-voltage limiter: Check if UDC_ACT < UDC_NOMINAL and ICTRL_ISQ_REF = ISQ_MAX_UDC and ICTRL_ISQ_REF = ISQ_MIN_UDC. 
+<br>- Recovery power limiter: Check if UDC_ACT> UDC_BLEEDER_ON and ICTRL_ISQ_REF = ISQ_MAX_UDC and ICTRL_ISQ_REF = ISQ_MIN_UDC. 
+<br>- Temperature limiter: The current is limited when movement is stopped due to over-temperature on junction. See error number <a href="9030.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/9030.htm">9030</a>.
+<br>
+<br>Speed limiting:
+<br>- Speed controller. Check if the speed SCTRL_SPEED_REF is limited with the limits SCTRL_LIM_V_POS, SCTRL_LIM_V_NEG or MOTOR_SPEED_MAX. 
+<br>- Position controller. Check if the speed PCTRL_V_ACT is limited with the limit POS_CTRL_P_MAX. 
+<br>
+<br>Encoder position or speed contains an error: See error number <a href="4014.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/4014.htm">4014</a>.
+<br>Motor wiring error: See error number <a href="6044.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/6044.htm">6044</a>.
+<br>Motor wiring error: See error number <a href="6045.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/6045.htm">6045</a>.
+<br>Motor defect: See error number <a href="6045.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/6045.htm">6045</a>.
+<br>ACOPOS defect: See error number <a href="6045.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/6045.htm">6045</a>.
+<br><br>
+  </p>
+ </body>
+</html>

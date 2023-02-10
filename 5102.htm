@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>5102 : Too many changes of cam profile per cycle (master period too short)</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>5102: Too many changes of cam profile per cycle (master period too short)</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Runtime error when cam automats are active if consecutive scan cycles (calculation cycle 400us) require a cam profile change each time. A maximum of one cam profile change is executed in a scan cycle. If this maximum 'frequency of change' is no longer sufficient, then the cam profiles lose their shape and the position relationship between the master and slave is lost.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>See error number <a href="4008.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/4008.htm">4008</a>.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>Speed too high in the master axis or an additive axis.
+<br>Position jumps in the master axis or an additive axis.
+<br>Master period of a cam profile or a compensation gear too short.
+<br>Master multiplication factor too small.
+<br>Change-of-state event with the attribute ncAT_ONCE occurs too often.
+<br>See also error number <a href="5036.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/5036.htm">5036</a>.
+<br><br>
+  </p>
+ </body>
+</html>

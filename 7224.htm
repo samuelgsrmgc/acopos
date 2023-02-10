@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>7224 : Connector to back plane: 24V-GND contact monitoring: Voltage too low</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>7224: Connector to back plane: 24V-GND contact monitoring: Voltage too low</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Runtime error if the 24V bus voltage is not measured on all backplane connectors of a module between the contacts 24V and GND.
+<br>
+<br>Definition of backplane connector:
+<br>The backplane connector connects the power module with the DC bus and 24V rails, by tightening the module's lower mounting screws. A backplane connector contains 5 contacts: From top to bottom UDC+, UDC-, PE, 24V, GND.
+<br>Contact monitoring in the backplane connector is present on the following modules:
+<br>- Power supply modules 8BVPxxxxxxxx.xxx-x
+<br>- Inverter modules with at least 2 backplane connectors (e.g.: 8BVx0880xxxx.xxx-x).
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>When 'switch on controller' command: 
+<br>See error number <a href="4005.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/4005.htm">4005</a>. 
+<br>
+<br>When controller is active: 
+<br>Inverter module: Movement stop by switching off the power element output stage and switching on the holding brake. 
+<br>Power supply unit: Switching off the power element output stage.
+<br>The 'controller ready' state is reset.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>If 
+<br>- The green LED on the auxiliary supply module is lit and 
+<br>- the 24V bus voltage is present:
+<br>Power module: Backplane connector contact problem: The 24V bus voltage cannot be transferred on at least one backplane connector. Check the module's lower mounting screws. 
+<br>Power module: Evaluation circuit of the 24V contact monitor is defective. Replace power module.
+<br>
+<br>If 
+<br>- The green LED on the auxiliary supply module is lit and 
+<br>- the 24V bus voltage is not present:
+<br>Auxiliary supply module: 24V output defective. Replace auxiliary supply module.
+<br>
+<br>If 
+<br>- only the red LED is lit on the auxiliary supply module,
+<br>- no LED lit on the inverter modules and 
+<br>- 24V bus voltage is not present:
+<br>Auxiliary supply module: Backplane connector contact problem: The auxiliary supply module's backplane connector has no contact with the 24V rails. Check the module's lower mounting screw. 
+<br>Auxiliary supply module: Module overload. Check current requirements.
+<br>Auxiliary supply module: Module defective. Replace auxiliary supply module.
+<br>24V-Bus: Short circuit between 24V- and GND-rail
+<br>
+<br>If 
+<br>- no LED lit on the auxiliary supply module,
+<br>- no LED lit on the inverter modules and 
+<br>- 24V bus voltage is not present:
+<br>Auxiliary supply module: 24V output is not switched off: X1 connector CR_OK signal is missing: There is no 5V voltage difference on the X1 connector between CR_OK (Pin5/Pin6) and COM (Pin3 /Pin3). Check the X1 connector. 
+<br>Power supply unit: CR_OK output defective. Replace power module.
+<br>Network: CR_OK output is not switched off because the mains is instable. Check the mains and DC bus voltage.
+<br><br>
+  </p>
+ </body>
+</html>

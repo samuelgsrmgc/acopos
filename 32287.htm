@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>32287 : Extended coupling data not possible (OutTime difference too large)</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>32287: Extended coupling data not possible (OutTime difference too large)</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> Difference between maxOutTime and minOutTime
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">UDINT</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Extended coupling data are used then for a network interface, if "Extended coupling data for ACP10_MC_BROADCAST=Yes" is defined for this network interface in the NC configuration.
+<br>
+<br>Extended coupling data can only be used if it is guaranteed that the coupling data can be received by the ACOPOS in each coupling cycle in synchronization with the network. Among other things (see also error number <a href="32288.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/32288.htm">32288</a>), this requires that the difference between the maximum transmission time (maxOutTime) and the minimum transmission time (minOutTime) is lower than the cycle time of the coupling cycle.
+<br>
+<br>The cycle time of the coupling cycle is the maximum of the following two cycle times:
+<br>- Cycle time of the NC manager task class
+<br>- POWERLINK cycle time of the corresponding network interface
+<br>
+<br>If the difference between maxOutTime and minOutTime is greater than or equal to the cycle time of the coupling cycle, then this error is indicated.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>Initialization of extended coupling data is aborted.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>The difference between maxOutTime and minOutTime depends on the system configuration of the NC manager task class and the POWERLINK configuration of the corresponding network interface. 
+<br>
+<br>System configuration of the NC manager task class:
+<br>The difference can be reduced by selecting one of the following settings for the parameter "I/O output delay":
+<br>- delay to middle of cycle
+<br>- delay to end to of cycle, only for task class Cyclic#1
+<br>
+<br>POWERLINK interface configuration, I/O bus parameters:
+<br>The difference can be reduced by selecting the NC manager task class for the parameter "Bus cycle trigger".
+<br><br>
+  </p>
+ </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>6045 : Power stage: Connection X5: No current flow</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>6045: Power stage: Connection X5: No current flow</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> Phase
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">USINT</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Runtime error while switching on the current controller. When switching on the controller, a test is made to determine whether or not current can be applied to the motor’s / regenerative choke’s (X5 connection) phases. The currents measured in this phase were too low.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>Movement stop by switching off the IGBT output stage and switching on the holding brake.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>X5 connection wiring error: Check if all phases (U, V and W) are properly connected to the X5 connection.
+<br>
+<br>Motor wiring error: Remove the phases (U,V and W) from the X5 connection. Check the phase-phase resistance between U-V, V-W and W-V on the motor line (ACOPOS-sided).The three resistances must be the same and finite. If at least one of the resistances is infinite then the motor or the motor line is defective.
+<br>
+<br>Motor defect: Check the phase-phase resistance between U-V, V-W and W-V right on the motor. The three resistances must be the same and finite. The motor must be replaced if at least one of the resistances is infinite.
+<br>
+<br>Incorrect motor configuration: MOTOR_STATOR_INDUCTANCE too low.
+<br>
+<br>Incorrect motor configuration: MOTOR_CURR_RATED too low.
+<br>
+<br>ACOPOS power stage defect: Replace the ACOPOS servo drive.
+<br>
+<br>The connection check can be deactivated using MOTOR_TEST_MODE.
+<br><br>
+  </p>
+ </body>
+</html>

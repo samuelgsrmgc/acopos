@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>9070 : Motor temperature model: Overload - Movement stopped</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>9070: Motor temperature model: Overload - Movement stopped</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> Load limit
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">REAL</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Runtime error if the load of motor temperature model LOAD_MOTOR_MODEL exceeds the limit 100%. Dependent on the mode TEMP_MOTOR_MODEL_MODE the limit exceeds under the following conditions.
+<br>
+<br>TEMP_MOTOR_MODEL_MODE = 1: 
+<br>If the root mean square value of [SQRT(ICTRL_ISQ_ACT^2 + ICTRL_ISD_ACT^2)/SQRT(2)] is lager than the rated motor current MOTOR_CURR_RATED.
+<br>
+<br>TEMP_MOTOR_MODEL_MODE = 2: 
+<br>If the maximum root mean square value from VCTRL_I1 and VCTRL_I2 is larger then [MOTOR_CURR_STALL^2 - nM/MOTOR_SPEED_RATED*( MOTOR_CURR_STALL^2 - MOTOR_CURR_RATED^2)] (nM...mean speed [min-1]).
+<br>
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>See error number <a href="9000.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/9000.htm">9000</a>.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>Current increased: See error number <a href="9030.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/9030.htm">9030</a>.
+<br>
+<br>Incorrect motor configuration:
+<br>-> Compare the motor rated current MOTOR_CURR_RATED with the motor specifications. 
+<br>-> Compare the motor stall current MOTOR_CURR_STALL with the motor specifications. 
+<br>-> Check the den motor winding cross section MOTOR_WIND_CROSS_SECT.
+<br><br>
+  </p>
+ </body>
+</html>

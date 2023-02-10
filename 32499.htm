@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>32499 : PLCopen_CyclicData_TaskClass: Values for real and virtual axis are not equal</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>32499: PLCopen_CyclicData_TaskClass: Values for real and virtual axis are not equal</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> Channel number of NC objects
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">USINT</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>For SG4 targets in the NC mapping table for each ACOPOS communication channel that task class can be defined, in which the cyclic PLCopen data are to be copied from a program to the POWERLINK network and vice versa. This is possible in the data record of a real or virtual axlis in the column "Additional Data" with the following XML attribute:
+<br>- PLCopen_CyclicData_TaskClass="<TaskClass_Number>"
+<br>
+<br>The real and virtual axis with the same node number and the same channel number are operated using the same ACOPOS communication channel. This error is output if different task classes are defined for the real and the virtual axis from the same communication channel. Moreover, the values defined with PLCopen_CyclicData_TaskClass are entered in the network trace for the corresponding NC objects with ParID TASKCL_CycDat_PLCopen.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>The ACOPOS startup function is aborted for this ACOPOS.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>Correct the values defined with PLCopen_CyclicData_TaskClass in the NC mapping table.
+<br><br>
+  </p>
+ </body>
+</html>

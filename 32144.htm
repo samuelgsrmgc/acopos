@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>32144 : Error for an ACOPOS Parameter Table specified in the NC Mapping Table</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>32144: Error for an ACOPOS Parameter Table specified in the NC Mapping Table</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> Index of this ACOPOS Parameter Table (name in Logger)
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">UINT</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Initial ACOPOS parameter tables are tables that are defined for an NC object in an NC mapping table. All of the parameters contained in initial ACOPOS parameter tables for a certain ACOPOS module are transferred to this ACOPOS during the function for ACOPOS startup.
+<br>
+<br>This error number is output if an error occurs while processing an initial ACOPOS parameter table. Additionally, the name of this ACOPOS parameter table is also entered in the Logger. Furthermore, an additional error record is also output containing details about the error which occurred.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>The transfer of initial ACOPOS parameter tables to this NC object is aborted. Processing is continued for any other initial ACOPOS parameter table defined for other NC objects of this ACOPOS module.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>The error described in the subsequent error record must be corrected.
+<br><br>
+  </p>
+ </body>
+</html>

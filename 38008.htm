@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>38008 : Bleeder: No current flow</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>38008: Bleeder: No current flow</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Runtime warning while switching on the controller. 
+<br>
+<br>8Vxxxx.00-x: 
+<br>While the controller is starting up, a test checks to see if the chopper current UDC_CHOP_CURR exceeds the limit value 0.8 * UDC_ACT / R_BLEEDER_EXT when the braking resistor chopper is activated briefly (20ms). The chopper current does not exceed the limit.
+<br>
+<br>8B0Pxxxxxxxx.xxx-x:
+<br>While the controller is starting up, a test checks to see if the DC bus voltage UDC_FILTER drops more than 2% when the braking resistor chopper is activated briefly. The DC bus voltage drop during the test procedure was less than 2%.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>None
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>ACOPOS: 
+<br>Fuse defective: Replace fuse.
+<br>High impedance power line: The forced DC bus voltage drop is less than 2%. The current flow test must be deactivated.
+<br>Chopper defective: Replace the ACOPOS module.
+<br>
+<br>External braking resistor:
+<br>Wiring error: Check whether all braking resistor lines are properly fastened at the RB+ and RB- connection.
+<br>Wiring error: Remove the braking resistor lines from the connections RB+ and RB-. Check the resistance between RB+ and RB- on the braking resistor lines on the ACOPOS side. The resistance must be finite and correspond to the braking resistor data. If the resistance is infinite, then the braking resistor or the line is defective.
+<br>Braking resistor defective: Check the resistance between RB+ and RB- right on the braking resistor. If the resistance is infinite, then the braking resistor is defective.
+<br>
+<br>8B0Pxxxxxxxx.xxx-x: 
+<br>Braking resistor error configuration: The parameter for the resistance value of the braking resistor R_BLEEDER_EXT was set too low.
+<br>Chopper current measurement defective: Replace the ACOPOS-module
+<br>DC bus voltage measurement defective: The real DC bus voltage value is lower than the measured DC bus voltage value UDC_ACT: Replace the ACOPOS-module
+<br>
+<br>The warning can be deactivated by setting Bit6 (0x40) in MOTOR_TEST_MODE.
+<br><br>
+  </p>
+ </body>
+</html>

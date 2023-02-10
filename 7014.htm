@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>7014 : Encoder: CRC error during parameter transfer</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>7014: Encoder: CRC error during parameter transfer</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> Slot
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">USINT</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Runtime error in an encoder with activated monitor (activation, see error number <a href="7030.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/7030.htm">7030</a>). A CDC error occurred during the data transfer.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>The transfer is repeated during the encoder initialization.
+<br>The transfer is aborted while writing the parameter.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>Encoder voltage dip (Check the ACOPOS 24VDC supply when power is supplied via plug-in cards).
+<br>Encoder defective.
+<br>SSI encoder connection is interrupted or defective. See wiring guidelines error number <a href="7030.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/7030.htm">7030</a>.
+<br>AC120 or AC121 plug-in card defect.
+<br><br>
+  </p>
+ </body>
+</html>

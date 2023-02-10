@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>39010 : EnDat encoder: Alarm bit - Battery change required</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>39010: EnDat encoder: Alarm bit - Battery change required</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> Slot
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">USINT</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Runtime error in an EnDat encoder with activated monitor (activation, see error number <a href="7030.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/7030.htm">7030</a>). Battery must be changed. 
+<br>The battery voltage dropped below a certain limit while using a battery-buffered encoder.
+<br>A change to the multi-turn position will not be recorded if the encoder is not supplied with power. Therefore, the multi-turn position is invalid.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>None
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>Change encoder battery.
+<br>Change encoder battery.
+<br>No encoder supply or supply contains an error.
+<br>See wiring guidelines error number <a href="7030.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/7030.htm">7030</a>.
+<br>The error can only be acknowledged by setting PARID_ENCOD_CMD = 1. 
+<br>The multi-turn position must then be measured.
+<br><br>
+  </p>
+ </body>
+</html>

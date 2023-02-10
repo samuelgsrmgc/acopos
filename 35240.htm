@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>35240 : SMC Functional Fail Safe: Violation of safety function</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>35240: SMC Functional Fail Safe: Violation of safety function</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> Additional info
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">UDINT</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Error during an active safety function.
+<br>
+<br>The additional information (Info1) shows the details:
+<br>0x00000000 ... Statemachine is in State Functional Fail Safe
+<br>0x00000010 ... Violation of standstill position during active SS2 or SOS
+<br>0x00000020 ... Encoder error was detected (encoder is mandatory)
+<br>0x00000030 ... Violations of the direction, both directions (positive and negative) are monitored.
+<br>0x00000031 ... Violation of the positive direction during active SDI.
+<br>0x00000032 ... Violation of the negative direction during active SDI.
+<br>0x00000041 ... Violation of standstill speed limit during SLI request.
+<br>0x00000042 ... Violation of Increments during active SLI
+<br>0xSSSS0050 ... Violation of the actual speed limit, no active speedlimit! (SSSS.. Speed at violation)
+<br>0xSSSS0051 ... Violation of the actual speed limit, ramp monitoring is active (SSSS.. Speed at violation)
+<br>0xSSSS0052 ... Violation of the actual speed limit, SMS is active (SSSS.. Speed at violation)
+<br>0xSSSS0053 ... Violation of the actual speed limit, SOS is active (SSSS.. Speed at violation)
+<br>0xSSSS0054 ... Violation of the actual speed limit, SS2 is active (SSSS.. Speed at violation)
+<br>0xSSSS0055 ... Violation of the actual speed limit, SLS1 is active (SSSS.. Speed at violation)
+<br>0xSSSS0056 ... Violation of the actual speed limit, SLS2 is active (SSSS.. Speed at violation)
+<br>0xSSSS0057 ... Violation of the actual speed limit, SLS3 is active (SSSS.. Speed at violation)
+<br>0xSSSS0058 ... Violation of the actual speed limit, SLS4 is active (SSSS.. Speed at violation)
+<br>0x00000059 ... Alive test of set position for requested safety functions missing
+<br>0x00000060 ... Warning on output was not acknowledged
+<br>0x00000061 ... Timeout for alive test of set position
+<br>0x00000062 ... Homing timeout for safety function SMP exceeded
+<br>0x00000063 ... Violation of the deceleration ramp for SMP
+<br>0x00000064 ... Violation of the deceleration ramp for SLP
+<br>0x00000065 ... Violation of the SMP position window in negative direction
+<br>0x00000066 ... Violation of the SMP position window in positive direction
+<br>0x00000067 ... Violation of the SLP position window in negative direction
+<br>0x00000068 ... Violation of the SLP position window in positive direction
+<br>0x00000069 ... Movement in neg. direction and lower SMP limit violated
+<br>0x0000006A ... Movement in pos. direction and upper SMP limit violated
+<br>0x0000006B ... SLP requested but axis not homed
+<br>0x0000006C ... general error regarding SMP / SLP
+<br>0x000000F7 ... Encoder absolute position exceeded INT32 range
+<br>
+<br>Offset information for safety logger:
+<br>binary data[20..17]: Info1
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>The module changes into Functional Fail Safe state.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>Check the application and/or the encoder!
+<br><br>
+  </p>
+ </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>37103 : Slave trigger outside of window</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>37103: Slave trigger outside of window</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Runtime error when cam automat is active (CMD_CAM_START) if a slave trigger is reached outside the valid window position (CAM_SL_TRIG_WINDOW).
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>No effect when 'real' false trigger occurs.
+<br>If a label trigger is rejected, the expected value is still set to the slave interval defined in the parameter. This could result in a deviation.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>Window defined too small.
+<br>The first trigger reached was false or label tape not correctly setup before the start.
+<br>The defined slave interval (CAM_SL_S_SYNC + CAM_SL_S_COMP) deviates too strongly from the actual interval.
+<br>Interval jump in the label tape (bonding point).
+<br>'Real' false trigger -> Check trigger sensor.
+<br>Error analysis with CAM_SL_TRIG_IV_MIN, CAM_SL_TRIG_IV_MAX.
+<br><br>
+  </p>
+ </body>
+</html>

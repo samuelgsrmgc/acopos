@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>1016 : Maximum cycle time exceeded - CPU load too high</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>1016: Maximum cycle time exceeded - CPU load too high</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Runtime error while processing the mid-priority operating system functions if the computing time load on the ACOPOS is too high (e.g. set value generation, network processing and function blocks are no longer completed with the position controller cycle of 400us). The high priority controller functions are further processed with a rigid cycle.
+<br>ACOPOSmulti, ACOPOSmicro: This error is only registered on the 1. axis (channel).
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>Depending on the duration and the degree by which the cycle time is exceeded, subsequent errors can occur (e.g. speed jumps and lag errors).
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>For diagnosis see parameter CPU_TICKS_CYCLE_PEAK (139).
+<br>The following items show some common examples, which increase the processor load:
+<br>Increased switch frequency F_SWITCH.
+<br>Increased current controller dynamics (halving current controller cycle time) ICTRL_MODE Bit0.
+<br>Set current filters are active ISQ_FILTER1_TYPE, ISQ_FILTER2_TYPE, ISQ_FILTER3_TYPE.
+<br>Many function blocks active FUNCTION_BLOCK_CREATE. Simultaneous events at several EVWR FB instances or writing a computation intensive command produces load peaks. 
+<br>Cyclic communication, data to drive CYCLIC_TODRV_PARID. Writing several paramter IDs simultaneously or writing a computation intensive command produces load peaks.
+<br>Cam automat, compensation gears AUT_COMP_MODE.
+<br>Virtual axis, basis movements or cam automat.
+<br>Several network coupling functions are active CONFIG_MA1/2/3/4/5_CYCLIC_POS.
+<br>Virtual encoder active ENCOD0_MODE.
+<br>Repetitive Control active CMD_SCTRL_RC.
+<br>Cyclic Trace, recording several test data points.
+<br>ACOPOS: Additional plug-in card in slot3 or slot4. Encoder plug-in cards need a little more computation time.
+<br>ACOPOSmulti: Both axis (channels) are active.
+<br><br>
+  </p>
+ </body>
+</html>

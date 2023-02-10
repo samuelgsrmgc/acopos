@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>7013 : Encoder: Status message</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>7013: Encoder: Status message</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> Status code
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">USINT</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Runtime error in a Hiperface encoder while reading or writing a parameter. The present encoder status is requested due to an error bit entry during a data transfer between Hiperface encoder and AC121 plug-in card. This should provide an answer about the cause of error.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>If the error bit has not been set, the Hiperface status message is read and error number <a href="7013.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/7013.htm">7013</a> is entered.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>Description of the encoder status according to Stegmann:
+<br> 
+<br>00h...The encoder has not detected an error
+<br>
+<br>Initialization error:
+<br>01h...Analog signal outside specification
+<br>02h...Internal angular offset incorrect
+<br>03h...Data field partition table destroyed
+<br>04h...Analog limiting values unavailable
+<br>05h...Internal I2C bus unserviceable
+<br>06h...Internal checksum error
+<br>
+<br>Protocol error:
+<br>07h...Encoder reset from program monitoring
+<br>09h...Parity error
+<br>0Ah...Checksum of the data transmitted is incorrect
+<br>0Bh...Unknown command code
+<br>0Ch...Number of data items transmitted is incorrect
+<br>0Dh...Command argument transmitted is impermissible
+<br>
+<br>Data error:
+<br>0Eh...The selected data field must not be written to
+<br>0Fh...Incorrect access code
+<br>10h...The size of the specified data field cannot be changed
+<br>11h...Specified word address outside data field
+<br>12h...Access to nonexistent data field
+<br>
+<br>Position error:
+<br>01h...Analog signal outside specification
+<br>1Fh...Speed too high, no position formation possible
+<br>20h...Impermissible single-turn position
+<br>21h...Multi-turn position error
+<br>22h...Multi-turn position error
+<br>23h...Multi-turn position error
+<br>
+<br>Other errors:
+<br>1Ch...Monitoring the magnitude of the analog signals (process data)
+<br>1Dh...Critical encoder current (contamination, transmitter breakdown)
+<br>1Eh...Critical encoder temperature
+<br>08h...Current overflow
+<br><br>
+  </p>
+ </body>
+</html>

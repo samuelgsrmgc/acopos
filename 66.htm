@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>66 : The operating system on the drive is incompatible to the existing network</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>66: The operating system on the drive is incompatible to the existing network</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> Hardware ID of operating system
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">USINT</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Response error in BsLoader mode during the 'change boot state' command. The operating system cannot be started because the saved operating system does not support the existing network.
+<br>
+<br>Hardware ID of operating system:
+<br>80h...CAN operating system
+<br>81h...POWERLINK operating system 
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>The command is not executed.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>A POWERLINK operating system is saved on a drive with a CAN network card (AC110 plug-in card).
+<br>A CAN operating system is saved on a drive with a POWERLINK network card (AC112 plug-in card).
+<br>See error number <a href="32018.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/32018.htm">32018</a>.
+<br><br>
+  </p>
+ </body>
+</html>

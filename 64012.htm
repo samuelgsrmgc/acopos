@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>64012 : acp10sys does not contain an operating system for this ACOPOS hardware type</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>64012: acp10sys does not contain an operating system for this ACOPOS hardware type</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>The BR module "acp10sys" should contain a device-specific operating system for every type of ACOPOS hardware unit that can be connected to the network. This enables the device-specific operating system to be transferred to the ACOPOS module during ACOPOS startup if it is not already present on the ACOPOS unit.
+<br>
+<br>If during ACOPOS startup the NC manager detects that the BR module "acp10sys" does not contain the device-specific operating system for an ACOPOS hardware type currently connected to the network, then this warning will be displayed.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>This warning is output but the ACOPOS startup process continues.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>"acp10sys" does not contain an operating system for the device type of the connected ACOPOS hardware module.
+<br>A version of the ACP10 software that contains the device-specific operating system for this ACOPOS hardware type should be added to the project.
+<br><br>
+  </p>
+ </body>
+</html>

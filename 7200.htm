@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>7200 : DC bus: Overvoltage</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>7200: DC bus: Overvoltage</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Runtime error when controller is active. The DC bus voltage monitor is registering that the module-dependent limit voltage has been exceeded.
+<br>8Vxxxx.00-x.. ~ 900VDC 
+<br>8BVI, 8CVI.... ~ 900VDC (UDC_OVMON_CTRL_OFF_LIM) 
+<br>8BVP, 8B0P... ~ 900VDC (UDC_OVMON_CTRL_OFF_LIM)
+<br>8DI......... ... ~ 900VDC (UDC_OVMON_CTRL_OFF_LIM)
+<br>8Vxxxx.50-x.. ~ 450VDC 
+<br>80V............. ~ 95VDC (UDC_OVMON_CTRL_OFF_LIM)
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>8Vxxxx.00-x, 8Vxxxx.50-x, 8BVI, 8CVI, 80V, 8DI: 
+<br>If the DC bus voltage drops within the time AXLIM_T_STOP_END under the module-dependent limit voltage, then the movement is stopped with short-circuit braking without current limitation.
+<br>
+<br>Setting STOP_ERR_DECEL_RAMP=ncCTRL_OFF:
+<br>Movement is aborted by switching off the controller and the power section immediately. The drive has no electrical torque.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>See <a href="javascript:if(confirm('http://www.xn--brtschi-5wa.ch/acp10_drivefunctions/power_transmission.html  \n\n¸ÃÎÄ¼þÎ´±» Teleport Pro ÏÂÔØ£¬ÒòÎª ËüÎ»ÓÚÆðÊ¼µØÖ·ÒÔÉèÖÃµÄ±ß½çÒÔÍâµÄÓò»òÂ·¾¶ÖÐ¡£  \n\nÄãÏëÒª´Ó·þÎñÆ÷´ò¿ªËüÂð?'))window.location='http://www.xn--brtschi-5wa.ch/acp10_drivefunctions/power_transmission.html'" tppabs="http://www.xn--brtschi-5wa.ch/acp10_drivefunctions/power_transmission.html">Power transmission</a>
+<br>
+<br>Braking resistor not active: 
+<br>In generator operation, check if the recorded DC bus voltage (UDC_ACT) does not level off when the switch-on voltage of the braking resistor (UDC_ACT> UDC_BLEEDER_ON) is exceeded.
+<br>- Control of the braking resistor is defective. -> Switch the ACOPOS servo drive
+<br>- Relay bleeder (intern/extern) is defective. -> Switch the ACOPOS servo drive
+<br>- Fuse for external braking resistor is defective. -> Check or switch the fuse
+<br>- Internal or external braking resistor is defective or is not connected. -> Switch the ACOPOS servo drive or the braking resistor. Measure the braking resistor on the ACOPOS servo drive X6 terminal and compare with the data sheet. -> Check the wiring of the external braking resistor. Caution: Observe safety regulations.
+<br> 
+<br>Recovery power limiter:
+<br>- switched off. -> Check if PLIM_MODE is set to 0.
+<br>- Incorrect configuration: Resistance of the external braking resistor R_BLEEDER_EXT is too high or stator resistance MOTOR_STATOR_RESISTANCE is too low.
+<br>
+<br>Mains disturbance:
+<br>- Supply voltage or DC bus voltage is too high. -> Check the DC bus voltage.
+<br><br>
+  </p>
+ </body>
+</html>

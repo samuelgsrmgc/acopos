@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>9300 : Current controller: Overcurrent</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>9300: Current controller: Overcurrent</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> Limit
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">REAL</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Runtime error if the maximum permissible (measurable) phase current is exceeded in phase U or phase V.
+<br>
+<br>The current limit depends on the ACOPOS module:
+<br>8V1010.00-2....6.4Apeak
+<br>8V1010.50-2.....16Apeak
+<br>8V1016.00-2....9.6Apeak
+<br>8V1016.50-2...26.7Apeak
+<br>8V1022.xx-x.....20Apeak
+<br>8V1045.xx-x.....40Apeak
+<br>8V1090.xx-x.....40Apeak
+<br>8V1180.xx-2.....82Apeak
+<br>8V1320.xx-2....133Apeak
+<br>8V1640.xx-x....333Apeak
+<br>8V128M.xx-x....500Apeak
+<br>
+<br>8Bxxxxxxxxxx.xxx-x....1.35*sqrt(2)*ACOPOS_CURR_MAX
+<br>8Cxxxxxxxxxx.xxx-x....1.35*sqrt(2)*ACOPOS_CURR_MAX
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>See error number <a href="6019.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/6019.htm">6019</a>.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>Set current value jump:
+<br>A jump in the set stator current of the quadrature component ICTRL_ISQ_REF occurs due to:
+<br>- Jump in the set position or set speed: See error number <a href="5036.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/5036.htm">5036</a>.
+<br>- Jump in the encoder position or speed: See error number <a href="4014.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/4014.htm">4014</a>.
+<br>- Jump in the speed offset (SCTRL_ADD_SET_PARID, SCTRL_SPEED_REF, SCTRL_V_SET_UNITS)
+<br>- Jump in the load offsets (ICTRL_ADD_SET_PARID, ICTRL_ADD_TRQ)
+<br>- Jump in the load on the motor shaft (jammed mechanics, load thrusts, etc.)
+<br>The actual stator current of the quadrature component ICTRL_ISQ_ACT can fluctuate above the maximum value as a result of a rigidly set current controller and a jump in the set stator current of the quadrature component ICTRL_ISQ_REF to the maximum value.
+<br>
+<br>Unstable current controller: 
+<br>- Due to magnetic saturation, the inductance is lower at high currents. The current controller is initialized automatically according to the motor inductance MOTOR_STATOR_INDUCTANCE. -> Check the current controller with the maximum permissible current.
+<br>- Incorrect current controller configurations: The current controller is initialized automatically according to the motor parameters MOTOR_STATOR_INDUCTANCE, MOTOR_ROTOR_INDUCTANCE. Check these parameters. -> Check the overshoot behavior of the step-response on the current controller.
+<br>
+<br>Motor wiring error: See error number <a href="6045.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/6045.htm">6045</a>.
+<br>Motor defect: See error number <a href="6019.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/6019.htm">6019</a>.
+<br>ACOPOS servo drive defect: See error number <a href="6019.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/6019.htm">6019</a>.
+<br><br>
+  </p>
+ </body>
+</html>

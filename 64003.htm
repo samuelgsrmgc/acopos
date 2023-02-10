@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>64003 : Delay before NC System Start (network with ascending node numbers ?)</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>64003: Delay before NC System Start (network with ascending node numbers ?)</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>During the basis initialization (function for startup of all ACOPOS modules connected to the network) in certain cases the parameter CMD_BOOT_STATE for starting the NC operating system is transferred to several ACOPOS modules connected to one POWERLINK network.
+<br>If an ACOPOS module uses the plug-in module AC112 as a POWERLINK network card, then recieving CMD_BOOT_STATE on this ACOPOS module interrupts communication to all POWERLINK stations that are connected in a line topology network via the 2x hub of the AC112 plug-in module of this ACOPOS.
+<br>If during the basis initialization it is recognized, that before transfer of CMD_BOOT_STATE the communication is interrupted for a certain time, then it is assumed, that the ACOPOS modules are connected line-formed and not with ascending node numbers.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>This warning is indicated.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>When using a line topology network, connect the ACOPOS modules with AC112 using ascending node numbers.
+<br><br>
+  </p>
+ </body>
+</html>

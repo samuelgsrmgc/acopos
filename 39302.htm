@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>39302 : Digital IO 1-4: Diagnose bit active (current, 24V supply)</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>39302: Digital IO 1-4: Diagnose bit active (current, 24V supply)</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> Slot
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">UINT</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Runtime error on digital outputs 1 to 4 of an AC130 plug-in card.
+<br>The diagnostics bit was set due to one of the following errors:
+<br>- Active current limitation of the output transistors
+<br>- Junction temperature of the transistors is too high
+<br>- Supply voltage too low
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>Current overload, supply voltage error or thermal overload causes the output to be shut off.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>Continuous output load exceeded (see AC130 technical data).
+<br>Output short-circuit.
+<br>See also error number <a href="39301.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/39301.htm">39301</a>.
+<br><br>
+  </p>
+ </body>
+</html>

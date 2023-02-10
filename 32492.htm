@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>32492 : ACOPOS Simulation: TC for cyclic PLCopen data not equal to NC Manager TC</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>32492: ACOPOS Simulation: TC for cyclic PLCopen data not equal to NC Manager TC</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>For SG4 targets that task class can be defined, in which the cyclic PLCopen data are to be copied from a program to the POWERLINK network and vice versa.
+<br>
+<br>Global this is possible in the ACP10 configuration (acp10cfg) for each POWERLINK interface with the parameter "Task class for handling of cyclic data with PLCopen (only for SG4)". The value contained in acp10cfg is entered in the network trace for each POWERLINK interface with node number 0 with ParID TASKCL_CycDat_PLCopen.
+<br>
+<br>Local for each ACOPOS communication channel this task class can be defined in the NC mapping table in the data record of a real or virtual axlis in the column "Additional Data" with the XML attribute PLCopen_CyclicData_TaskClass. The values defined with PLCopen_CyclicData_TaskClass are entered in the network trace for the corresponding NC objects with ParID TASKCL_CycDat_PLCopen.
+<br>
+<br>If ACOPOS simulation is activated, then the task class for handling of cyclic data with PLCopen must be equal to the task class for NC manager task (TASKCL_CycDat_PLCopen zero or same number as the task class for NC manager task). If another value is defined, then this error is indicated.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>The ACOPOS startup function is aborted for this ACOPOS.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>Correct the value in the ACP10 configuration or in the NC mapping table.
+<br><br>
+  </p>
+ </body>
+</html>

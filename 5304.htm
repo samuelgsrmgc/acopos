@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>5304 : Format error in cam profile data</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>5304: Format error in cam profile data</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"> Detail
+</td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%">UINT</td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Response error at the last data segment of the cam profile download (AUT_POLY_DATA). The polynomial data is checked for validity before the cam profile is accepted.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>The new cam profile is not accepted.
+<br>A previously valid cam profile with this data index is kept.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>Detail
+<br>1: The number of polynomials does not fall within the range of 1-64.
+<br>2: The coefficient a1 for the y-shift of the 1st polynomial is not 0.
+<br>3: Invalid float value range for a coefficient.
+<br>4: A polynomial master position xi is negative or smaller than the previous master position.
+<br>5: The last master position xn does not correspond to the master interval (period).
+<br>6: The polynomial function value y(xn) at the end of the master interval does not correspond to the slave interval. See also error number <a href="37111.htm" tppabs="http://www.xn--brtschi-5wa.ch/automation/html/37111.htm">37111</a>.
+<br>7: The length of the master period (period) is too small or is negative.
+<br>8: The number of bytes in the data block does not fall within the range of 1-64 polynomials.
+<br>9: The value for 'reserve' is not 0.
+<br><br>
+  </p>
+ </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>5315 : Download error: Cam profile data in use by cam automat or function block</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" tppabs="http://www.xn--brtschi-5wa.ch/help/styles.css">
+  <link rel="stylesheet" type="text/css" href="arnc0.css" tppabs="http://www.xn--brtschi-5wa.ch/automation/css/arnc0.css">
+ </head>
+ <body onload="DomcatInitialize()">
+        <!--Glossary-->
+      <script language="javascript" src="glossary.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Glossary/glossary.js" type="text/javascript"></script>
+      <script language="javascript" src="Domcat.js" tppabs="http://www.xn--brtschi-5wa.ch/as/Domcat/Domcat.js" type="text/javascript"></script>
+      <!--/Glossary-->
+<h1>5315: Download error: Cam profile data in use by cam automat or function block</h1>
+  <table class="syntax" width="100%" id="g1" cellspacing="3" cellpadding="2">
+    
+    <tr>
+      <td width="15%" nowrap><b>Info:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    <tr>
+      <td width="15%" nowrap><b>Data type:</b></td>
+      <td width="85%"></td>
+    </tr>
+    
+    </table>
+  
+  <p>
+  <b>Description:</b>
+  <br>Response error at the last data segment of the cam profile download (AUT_DATA_INDEX, AUT_POLY_DATA). A download for this data index has already been executed several times (online change of cam profiles). These cam profiles have not yet been enabled and too many cam profiles are now being used with the same index.
+<br><br>
+  </p>
+  <p>
+  <b>Reaction:</b>
+  <br>The new cam profile is not accepted.
+<br>A previously valid cam profile with this data index is kept.
+<br><br>
+  </p>
+  <p>
+  <b>Cause/Remedy:</b>
+  <br>Download to the wrong data index.
+<br>The lock for consistent online parameter change (AUT_ONL_PAR_LOCK) is not reset.
+<br>Too many instances are using the same cam profile. For example, cam automat real and virtual axis, CURVE function blocks.
+<br>The cam profile is not enabled (e.g. the cam profile master axis does not move, therefore remaining in the curve).
+<br>CURVE function blocks continually block a curve.
+<br>-> For online change and static application, no common data index should be used. If the same cam profile is required, it can be transferred to a second data index.
+<br><br>
+  </p>
+ </body>
+</html>
